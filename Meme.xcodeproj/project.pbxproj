@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35D05EFE1CEB611500526A32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05EFD1CEB611500526A32 /* AppDelegate.swift */; };
-		35D05F001CEB611500526A32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05EFF1CEB611500526A32 /* ViewController.swift */; };
+		35D05F001CEB611500526A32 /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05EFF1CEB611500526A32 /* MemeViewController.swift */; };
 		35D05F031CEB611500526A32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D05F011CEB611500526A32 /* Main.storyboard */; };
 		35D05F051CEB611500526A32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D05F041CEB611500526A32 /* Assets.xcassets */; };
 		35D05F081CEB611500526A32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D05F061CEB611500526A32 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		35D05EFA1CEB611500526A32 /* Meme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D05EFD1CEB611500526A32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35D05EFF1CEB611500526A32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		35D05EFF1CEB611500526A32 /* MemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewController.swift; sourceTree = "<group>"; };
 		35D05F021CEB611500526A32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35D05F041CEB611500526A32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35D05F071CEB611500526A32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				35D05EFD1CEB611500526A32 /* AppDelegate.swift */,
-				35D05EFF1CEB611500526A32 /* ViewController.swift */,
+				35D05EFF1CEB611500526A32 /* MemeViewController.swift */,
 				35D05F011CEB611500526A32 /* Main.storyboard */,
 				35D05F041CEB611500526A32 /* Assets.xcassets */,
 				35D05F061CEB611500526A32 /* LaunchScreen.storyboard */,
@@ -256,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35D05F001CEB611500526A32 /* ViewController.swift in Sources */,
+				35D05F001CEB611500526A32 /* MemeViewController.swift in Sources */,
 				35D05EFE1CEB611500526A32 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,7 +401,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Meme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hhhotdog.Meme;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hhhotdog.iPhoneTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -412,7 +412,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Meme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hhhotdog.Meme;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hhhotdog.iPhoneTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -482,6 +482,7 @@
 				35D05F241CEB611500526A32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35D05F251CEB611500526A32 /* Build configuration list for PBXNativeTarget "MemeTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +491,7 @@
 				35D05F271CEB611500526A32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35D05F281CEB611500526A32 /* Build configuration list for PBXNativeTarget "MemeUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +500,7 @@
 				35D05F2A1CEB611500526A32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
