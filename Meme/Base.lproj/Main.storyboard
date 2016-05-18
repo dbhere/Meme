@@ -75,6 +75,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="5FV-3B-8HT"/>
                                 </constraints>
+                                <items>
+                                    <navigationItem id="n0A-B4-wiA"/>
+                                </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -96,6 +99,7 @@
                         <outlet property="cameraButton" destination="oAm-Pr-Ozo" id="sEu-k8-fc3"/>
                         <outlet property="imageView" destination="4JO-R2-vxp" id="xoE-ph-Bba"/>
                         <outlet property="navBar" destination="6bh-wx-YX4" id="Hjy-Ef-oJD"/>
+                        <outlet property="navItem" destination="n0A-B4-wiA" id="0s4-6d-gsq"/>
                         <outlet property="toolBar" destination="viw-PY-7uX" id="pQv-sA-wZW"/>
                         <outlet property="topTextField" destination="fKa-BY-rjg" id="mAa-lj-7iJ"/>
                     </connections>

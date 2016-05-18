@@ -16,6 +16,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var navItem: UINavigationItem!
     
     //MARK: Properties
     let memeTextAttributes = [
@@ -42,6 +43,9 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         subscribeToKeyboardNotifications()
         keyboardHasOnScreen = false
+        navItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(shareYourMeme))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(cancelMeme))
+        navItem.leftBarButtonItem?.enabled = (imageView.image != nil)
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
@@ -65,6 +69,12 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
+    func cancelMeme(){
+        imageView.image = nil
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+    }
+    
     //MARK: Helper
     private func generateMemedImage() -> UIImage {
         //hide toolbar and navbar
@@ -85,6 +95,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     private func save() {
         //Create the meme
         let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: imageView.image!, memedImage: generateMemedImage())
+        //seemed useful in meme2.0?
     }
     
     private func pickUpAnImage(source:UIImagePickerControllerSourceType){
@@ -96,13 +107,13 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     //compute keyboard height and change frame
     func keyboardWillShow(notification: NSNotification){
-        if !keyboardHasOnScreen{
+        if !keyboardHasOnScreen  && bottomTextField.isFirstResponder(){
             view.frame.origin.y -= getKeyboardHeight(notification)
             keyboardHasOnScreen = !keyboardHasOnScreen
         }
     }
     func keyboardWillHide(notification: NSNotification){
-        if keyboardHasOnScreen{
+        if keyboardHasOnScreen && bottomTextField.isFirstResponder(){
             view.frame.origin.y += getKeyboardHeight(notification)
             keyboardHasOnScreen = !keyboardHasOnScreen
         }
