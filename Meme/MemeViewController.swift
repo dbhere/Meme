@@ -57,6 +57,14 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         pickUpAnImage(.Camera)
     }
     
+    func shareYourMeme(){
+        let memedImage = generateMemedImage()
+        let activityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        presentViewController(activityVC, animated: true) { 
+            self.save()
+        }
+    }
+    
     //MARK: Helper
     private func generateMemedImage() -> UIImage {
         //hide toolbar and navbar
