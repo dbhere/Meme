@@ -14,6 +14,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var toolBar: UIToolbar!
     
     //MARK: Properties
     let memeTextAttributes = [
@@ -56,6 +58,27 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     //MARK: Helper
+    private func generateMemedImage() -> UIImage {
+        //hide toolbar and navbar
+        navBar.hidden = true
+        toolBar.hidden = true
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //show navbar and toolbar
+        navBar.hidden = false
+        toolBar.hidden = false
+        return memedImage
+    }
+    
+    private func save() {
+        //Create the meme
+        let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: imageView.image!, memedImage: generateMemedImage())
+    }
+    
     private func pickUpAnImage(source:UIImagePickerControllerSourceType){
         let imagePickerVC = UIImagePickerController()
         imagePickerVC.delegate = self

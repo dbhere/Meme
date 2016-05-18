@@ -95,6 +95,8 @@
                         <outlet property="bottomTextField" destination="wNH-vD-PLT" id="szF-oN-es1"/>
                         <outlet property="cameraButton" destination="oAm-Pr-Ozo" id="sEu-k8-fc3"/>
                         <outlet property="imageView" destination="4JO-R2-vxp" id="xoE-ph-Bba"/>
+                        <outlet property="navBar" destination="6bh-wx-YX4" id="Hjy-Ef-oJD"/>
+                        <outlet property="toolBar" destination="viw-PY-7uX" id="pQv-sA-wZW"/>
                         <outlet property="topTextField" destination="fKa-BY-rjg" id="mAa-lj-7iJ"/>
                     </connections>
                 </viewController>
