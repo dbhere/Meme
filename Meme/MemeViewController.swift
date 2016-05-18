@@ -25,11 +25,14 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSStrokeWidthAttributeName: -3.0
     ]
+    //mark whether keyboard has been on screen
     var keyboardHasOnScreen = false
     
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set textfield attributes
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = .Center
@@ -43,6 +46,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         subscribeToKeyboardNotifications()
         keyboardHasOnScreen = false
+        
         navItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(shareYourMeme))
         navItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(cancelMeme))
         navItem.leftBarButtonItem?.enabled = (imageView.image != nil)
@@ -61,6 +65,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         pickUpAnImage(.Camera)
     }
     
+    //MARK:navigation bar buttion method
     func shareYourMeme(){
         let memedImage = generateMemedImage()
         let activityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
@@ -68,7 +73,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             self.save()
         }
     }
-    
     func cancelMeme(){
         imageView.image = nil
         topTextField.text = "TOP"
