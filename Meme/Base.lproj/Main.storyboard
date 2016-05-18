@@ -19,46 +19,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLL-c2-tKQ">
-                                <rect key="frame" x="0.0" y="44" width="600" height="512"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="620"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4JO-R2-vxp">
-                                        <rect key="frame" x="8" y="8" width="584" height="496"/>
+                                        <rect key="frame" x="0.0" y="8" width="600" height="604"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-BY-rjg">
-                                        <rect key="frame" x="8" y="28" width="584" height="17"/>
+                                        <rect key="frame" x="8" y="58" width="584" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wNH-vD-PLT">
-                                        <rect key="frame" x="8" y="467" width="584" height="17"/>
+                                        <rect key="frame" x="8" y="545" width="584" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="fKa-BY-rjg" firstAttribute="top" secondItem="nLL-c2-tKQ" secondAttribute="topMargin" constant="20" id="BXA-Ph-BZR"/>
-                                    <constraint firstItem="4JO-R2-vxp" firstAttribute="leading" secondItem="nLL-c2-tKQ" secondAttribute="leadingMargin" id="C5y-3b-ST7"/>
+                                    <constraint firstAttribute="trailing" secondItem="4JO-R2-vxp" secondAttribute="trailing" id="3R4-pd-57W"/>
+                                    <constraint firstItem="fKa-BY-rjg" firstAttribute="top" secondItem="nLL-c2-tKQ" secondAttribute="topMargin" constant="50" id="BXA-Ph-BZR"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="fKa-BY-rjg" secondAttribute="trailing" id="CsZ-KJ-IB8"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="wNH-vD-PLT" secondAttribute="bottom" constant="20" id="GDR-ta-bBf"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="wNH-vD-PLT" secondAttribute="bottom" constant="50" id="GDR-ta-bBf"/>
                                     <constraint firstItem="4JO-R2-vxp" firstAttribute="top" secondItem="nLL-c2-tKQ" secondAttribute="topMargin" id="WON-7C-Prb"/>
                                     <constraint firstItem="wNH-vD-PLT" firstAttribute="leading" secondItem="nLL-c2-tKQ" secondAttribute="leadingMargin" id="ZjC-wl-hDZ"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="4JO-R2-vxp" secondAttribute="trailing" id="gpS-nz-lVW"/>
+                                    <constraint firstItem="4JO-R2-vxp" firstAttribute="leading" secondItem="nLL-c2-tKQ" secondAttribute="leading" id="dnN-Op-iy0"/>
                                     <constraint firstItem="fKa-BY-rjg" firstAttribute="leading" secondItem="nLL-c2-tKQ" secondAttribute="leadingMargin" id="j2W-QZ-o4w"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="wNH-vD-PLT" secondAttribute="trailing" id="o94-UP-UyE"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="4JO-R2-vxp" secondAttribute="bottom" id="xn4-ND-VkP"/>
                                 </constraints>
                             </view>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bh-wx-YX4">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="5FV-3B-8HT"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem id="n0A-B4-wiA"/>
-                                </items>
-                            </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="viw-PY-7uX">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="viw-PY-7uX">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="G6m-Qg-yVE"/>
@@ -79,20 +70,35 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="zGD-JC-syg"/>
                                 </items>
                             </toolbar>
+                            <navigationBar alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bh-wx-YX4">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5FV-3B-8HT"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="n0A-B4-wiA"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6bh-wx-YX4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="1Xm-UM-i26"/>
                             <constraint firstItem="6bh-wx-YX4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="3If-iI-acH"/>
-                            <constraint firstItem="viw-PY-7uX" firstAttribute="top" secondItem="nLL-c2-tKQ" secondAttribute="bottom" id="5Ml-o3-gkn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nLL-c2-tKQ" secondAttribute="bottom" constant="-20" id="6VC-nm-Ktd"/>
+                            <constraint firstItem="nLL-c2-tKQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Vc-P7-iql"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="viw-PY-7uX" secondAttribute="bottom" id="AO8-Nl-8HH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nLL-c2-tKQ" secondAttribute="trailing" constant="-20" id="Ped-8H-TFd"/>
-                            <constraint firstItem="nLL-c2-tKQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="hoG-Df-VWa"/>
+                            <constraint firstAttribute="trailing" secondItem="nLL-c2-tKQ" secondAttribute="trailing" id="Qqj-WC-Y18"/>
+                            <constraint firstItem="nLL-c2-tKQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="hzg-DU-8vS"/>
                             <constraint firstItem="viw-PY-7uX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="kLS-fU-iyX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6bh-wx-YX4" secondAttribute="trailing" constant="-20" id="nfa-sP-qTL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nLL-c2-tKQ" secondAttribute="bottom" id="sZG-rR-KV5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="viw-PY-7uX" secondAttribute="trailing" constant="-20" id="tMn-ni-DKn"/>
-                            <constraint firstItem="nLL-c2-tKQ" firstAttribute="top" secondItem="6bh-wx-YX4" secondAttribute="bottom" id="vOm-6r-aFj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="sZG-rR-KV5"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="wNH-vD-PLT" id="szF-oN-es1"/>
