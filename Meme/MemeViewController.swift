@@ -12,17 +12,21 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     
     @IBAction func pickUpAnImageFromAlbum() {
-        pickUpAnImage(UIImagePickerControllerSourceType.PhotoLibrary)
+        pickUpAnImage(.PhotoLibrary)
     }
     
     @IBAction func pickUpAnImageFromCamera() {
-        pickUpAnImage(UIImagePickerControllerSourceType.Camera)
+        pickUpAnImage(.Camera)
     }
     
     //MARK: Helper
