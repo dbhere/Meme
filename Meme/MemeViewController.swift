@@ -102,7 +102,12 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     private func save() {
         //Create the meme
         let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: imageView.image!, memedImage: generateMemedImage())
-        //seemed useful in meme2.0?
+        
+        //add meme to shared model in application delegate
+        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        delegate.memes.append(meme)
+        
+        
     }
     
     private func pickUpAnImage(source:UIImagePickerControllerSourceType){
