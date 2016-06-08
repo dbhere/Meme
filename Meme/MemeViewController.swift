@@ -31,7 +31,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //set textfield attributes
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
@@ -39,6 +38,11 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         bottomTextField.textAlignment = .Center
         topTextField.delegate = self
         bottomTextField.delegate = self
+        
+        UIApplication.sharedApplication().statusBarHidden = true
+        navItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(shareYourMeme))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(cancelMeme))
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -46,9 +50,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         subscribeToKeyboardNotifications()
         keyboardHasOnScreen = false
-        
-        navItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(shareYourMeme))
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(cancelMeme))
         navItem.leftBarButtonItem?.enabled = (imageView.image != nil)
     }
     override func viewWillDisappear(animated: Bool) {
@@ -72,14 +73,14 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         activityVC.completionWithItemsHandler = { activityType, success, items, error in
             if success{
                 self.save()
+                self.dismissViewControllerAnimated(true, completion: nil)
+                UIApplication.sharedApplication().statusBarHidden = false
             }
         }
         presentViewController(activityVC, animated: true, completion: nil)
     }
     func cancelMeme(){
-        imageView.image = nil
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     //MARK: Helper
