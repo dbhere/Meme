@@ -69,9 +69,12 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func shareYourMeme(){
         let memedImage = generateMemedImage()
         let activityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        presentViewController(activityVC, animated: true) { 
-            self.save()
+        activityVC.completionWithItemsHandler = { activityType, success, items, error in
+            if success{
+                self.save()
+            }
         }
+        presentViewController(activityVC, animated: true, completion: nil)
     }
     func cancelMeme(){
         imageView.image = nil
