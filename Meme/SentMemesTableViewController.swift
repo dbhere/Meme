@@ -40,6 +40,11 @@ class SentMemesTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let nextVC = self.storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        nextVC.meme = memes[indexPath.row]
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

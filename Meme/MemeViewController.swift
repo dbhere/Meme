@@ -19,6 +19,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var navItem: UINavigationItem!
     
     //MARK: Properties
+    
+    var editMeme: Meme?
     let memeTextAttributes = [
         NSStrokeColorAttributeName: UIColor.blackColor(),
         NSForegroundColorAttributeName: UIColor.whiteColor(),
@@ -42,6 +44,11 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         UIApplication.sharedApplication().statusBarHidden = true
         navItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(shareYourMeme))
         navItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(cancelMeme))
+        if let meme = editMeme {
+            imageView.image = meme.originalImage
+            topTextField.text = meme.topText
+            bottomTextField.text = meme.bottomText
+        }
         
     }
     
@@ -80,6 +87,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         presentViewController(activityVC, animated: true, completion: nil)
     }
     func cancelMeme(){
+        UIApplication.sharedApplication().statusBarHidden = false
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
