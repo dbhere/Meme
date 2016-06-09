@@ -135,18 +135,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcC-j2-KDa">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="100"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jr5-xT-CVw">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jr5-xT-CVw">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="128" id="32o-pr-px5"/>
-                                                        <constraint firstAttribute="height" constant="100" id="uwZ-Yc-xBF"/>
-                                                    </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="32o-pr-px5"/>
-                                                            <exclude reference="uwZ-Yc-xBF"/>
-                                                        </mask>
-                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEV-sZ-kf1">
                                                     <rect key="frame" x="8" y="10" width="112" height="21"/>
