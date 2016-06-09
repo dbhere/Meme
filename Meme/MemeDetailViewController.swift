@@ -18,16 +18,18 @@ class MemeDetailViewController: UIViewController {
         memeImage.image = meme.memedImage
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(editMeme))
     }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.hidden = true
+    }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.hidden = false
+    }
     
     func editMeme(){
         let nextVC = self.storyboard?.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
         nextVC.editMeme = meme
         self.presentViewController(nextVC, animated: true, completion: nil)
     }
-
-    
-    
-
-    
-
 }
