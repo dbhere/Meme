@@ -32,6 +32,10 @@ class SentMemesTableViewController: UITableViewController {
         let nextVC = self.storyboard?.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
         self.presentViewController(nextVC, animated: true, completion: nil)
     }
+    
+    @IBAction func backToMemeList(segue: UIStoryboardSegue){
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

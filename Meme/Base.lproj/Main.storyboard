@@ -309,9 +309,11 @@
                         <outlet property="navItem" destination="n0A-B4-wiA" id="0s4-6d-gsq"/>
                         <outlet property="toolBar" destination="viw-PY-7uX" id="pQv-sA-wZW"/>
                         <outlet property="topTextField" destination="fKa-BY-rjg" id="mAa-lj-7iJ"/>
+                        <segue destination="J5p-gL-ZAN" kind="unwind" identifier="backToMemeList" unwindAction="backToMemeList:" id="RFq-wY-uJu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="J5p-gL-ZAN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="291" y="2104"/>
         </scene>

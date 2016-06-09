@@ -88,7 +88,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     func cancelMeme(){
         UIApplication.sharedApplication().statusBarHidden = false
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.performSegueWithIdentifier("backToMemeList", sender: self)
     }
     
     //MARK: Helper
