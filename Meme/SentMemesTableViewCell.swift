@@ -13,5 +13,4 @@ class SentMemesTableViewCell: UITableViewCell {
     @IBOutlet weak var topBottomInfo: UILabel!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
-    
 }

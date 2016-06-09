@@ -13,6 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var memes = [Meme]()
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName: UIColor.blackColor(),
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 15)!,
+        NSStrokeWidthAttributeName: -3.0
+    ]
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

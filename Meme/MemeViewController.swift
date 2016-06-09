@@ -49,7 +49,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             topTextField.text = meme.topText
             bottomTextField.text = meme.bottomText
         }
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -179,10 +178,3 @@ extension MemeViewController: UITextFieldDelegate{
     }
 
 }
-
-
-
-
-
-
-

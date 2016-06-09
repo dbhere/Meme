@@ -12,20 +12,19 @@ private let reuseIdentifier = "SentMemesCollectionViewCell"
 
 class SentMemesCollectionViewController: UICollectionViewController {
     //MARK: Properties
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var memes:[Meme] {
-        return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
+        return appDelegate.memes
+    }
+    var memeTextAttributes:[String: AnyObject]{
+        return appDelegate.memeTextAttributes
     }
     let itemSpcae:CGFloat = 3.0
-    let memeTextAttributes = [
-        NSStrokeColorAttributeName: UIColor.blackColor(),
-        NSForegroundColorAttributeName: UIColor.whiteColor(),
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 15)!,
-        NSStrokeWidthAttributeName: -3.0
-    ]
     
     //MARK: Outlets
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
+    //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         adjustCellSize(itemSpcae)
@@ -42,6 +41,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         adjustCellSize(itemSpcae)
     }
     
+    //MARK: Actions
     func addMeme(){
         let nextVC = self.storyboard?.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
         self.presentViewController(nextVC, animated: true, completion: nil)
@@ -78,6 +78,4 @@ class SentMemesCollectionViewController: UICollectionViewController {
         nextVC.meme = memes[indexPath.row]
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
-
 }
