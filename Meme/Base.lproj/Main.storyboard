@@ -41,28 +41,67 @@
             </objects>
             <point key="canvasLocation" x="513" y="-434"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="miP-CR-PhE">
             <objects>
-                <collectionViewController id="go3-v5-8fT" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="SentMemesCollectionViewController" id="go3-v5-8fT" customClass="SentMemesCollectionViewController" customModule="Meme" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Gc4-W4-FTR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.99872044609999999" blue="0.99261039129999995" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="frC-DM-60I">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="197" height="204"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KiT-pc-fKM">
-                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SentMemesCollectionViewCell" id="KiT-pc-fKM" customClass="SentMemesCollectionViewCell" customModule="Meme" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="197" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="197" height="204"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vDj-Z4-86H">
+                                            <rect key="frame" x="0.0" y="0.0" width="197" height="204"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMV-aG-KUK">
+                                            <rect key="frame" x="80" y="23" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a34-tS-ZFw">
+                                            <rect key="frame" x="80" y="163" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="a34-tS-ZFw" firstAttribute="centerX" secondItem="KiT-pc-fKM" secondAttribute="centerX" id="2kJ-z1-Ov6"/>
+                                    <constraint firstAttribute="trailing" secondItem="vDj-Z4-86H" secondAttribute="trailing" id="6zD-ch-lOh"/>
+                                    <constraint firstItem="vMV-aG-KUK" firstAttribute="centerX" secondItem="KiT-pc-fKM" secondAttribute="centerX" id="Qfz-Si-gaZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="vDj-Z4-86H" secondAttribute="bottom" id="Rsi-i3-VWU"/>
+                                    <constraint firstItem="a34-tS-ZFw" firstAttribute="bottom" secondItem="vDj-Z4-86H" secondAttribute="bottom" constant="10" id="SE8-SO-7Oq"/>
+                                    <constraint firstItem="vDj-Z4-86H" firstAttribute="leading" secondItem="KiT-pc-fKM" secondAttribute="leading" id="Tsh-QJ-bG9"/>
+                                    <constraint firstItem="vMV-aG-KUK" firstAttribute="top" secondItem="vDj-Z4-86H" secondAttribute="top" constant="10" id="YNb-er-1Zn"/>
+                                    <constraint firstItem="a34-tS-ZFw" firstAttribute="bottom" secondItem="vDj-Z4-86H" secondAttribute="bottom" constant="-10" id="bNj-Ok-iXi"/>
+                                    <constraint firstItem="vDj-Z4-86H" firstAttribute="top" secondItem="KiT-pc-fKM" secondAttribute="top" id="gdN-pl-4f7"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SE8-SO-7Oq"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="bottomLabel" destination="a34-tS-ZFw" id="LDx-Ow-e9E"/>
+                                    <outlet property="originalImage" destination="vDj-Z4-86H" id="DSa-dE-LEf"/>
+                                    <outlet property="topLabel" destination="vMV-aG-KUK" id="2Er-1S-d8e"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -70,7 +109,10 @@
                             <outlet property="delegate" destination="go3-v5-8fT" id="aeK-Zm-hxT"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="0eN-7g-Mzw"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="0eN-7g-Mzw"/>
+                    <connections>
+                        <outlet property="flowLayout" destination="frC-DM-60I" id="Av3-CZ-oYN"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hh-ft-Wjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
