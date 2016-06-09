@@ -19,7 +19,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     let memeTextAttributes = [
         NSStrokeColorAttributeName: UIColor.blackColor(),
         NSForegroundColorAttributeName: UIColor.whiteColor(),
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 10)!,
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 15)!,
         NSStrokeWidthAttributeName: -3.0
     ]
     

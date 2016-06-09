@@ -12,6 +12,12 @@ class SentMemesTableViewController: UITableViewController {
     var memes:[Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName: UIColor.blackColor(),
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 15)!,
+        NSStrokeWidthAttributeName: -3.0
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +41,10 @@ class SentMemesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SentMemesTableViewCell") as! SentMemesTableViewCell
         let meme = memes[indexPath.row]
-        cell.memeImage.image = meme.memedImage
+        cell.memeImage.image = meme.originalImage
         cell.topBottomInfo.text = (meme.topText ?? "") + (meme.bottomText ?? "")
+        cell.topLabel.attributedText = NSAttributedString(string: meme.topText ?? "", attributes: memeTextAttributes)
+        cell.bottomLabel.attributedText = NSAttributedString(string: meme.bottomText ?? "", attributes: memeTextAttributes)
         return cell
     }
 
