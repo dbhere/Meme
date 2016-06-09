@@ -24,11 +24,11 @@
             </objects>
             <point key="canvasLocation" x="-243" y="19"/>
         </scene>
-        <!--Item-->
+        <!--Table-->
         <scene sceneID="6vQ-Ha-0Kf">
             <objects>
                 <navigationController id="Gdd-fH-xvf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="4SC-lB-7sQ"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="table" id="4SC-lB-7sQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p6w-zU-Mco">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -347,11 +347,11 @@
             </objects>
             <point key="canvasLocation" x="1413" y="2057"/>
         </scene>
-        <!--Item-->
+        <!--Collection-->
         <scene sceneID="c9o-j2-1SX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z6U-oZ-Uqo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="4cC-vq-51V"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="collection" id="4cC-vq-51V"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mZU-if-l7r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -367,4 +367,8 @@
             <point key="canvasLocation" x="479" y="607"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection" width="30" height="30"/>
+        <image name="table" width="30" height="30"/>
+    </resources>
 </document>

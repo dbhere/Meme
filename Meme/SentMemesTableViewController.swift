@@ -42,7 +42,7 @@ class SentMemesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("SentMemesTableViewCell") as! SentMemesTableViewCell
         let meme = memes[indexPath.row]
         cell.memeImage.image = meme.originalImage
-        cell.topBottomInfo.text = (meme.topText ?? "") + (meme.bottomText ?? "")
+        cell.topBottomInfo.text = (meme.topText ?? "") + " " + (meme.bottomText ?? "")
         cell.topLabel.attributedText = NSAttributedString(string: meme.topText ?? "", attributes: memeTextAttributes)
         cell.bottomLabel.attributedText = NSAttributedString(string: meme.bottomText ?? "", attributes: memeTextAttributes)
         return cell
