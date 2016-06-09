@@ -80,7 +80,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         activityVC.completionWithItemsHandler = { activityType, success, items, error in
             if success{
                 self.save()
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.performSegueWithIdentifier("backToMemeList", sender: self)
                 UIApplication.sharedApplication().statusBarHidden = false
             }
         }
