@@ -1,5 +1,5 @@
 //
-//  MemeViewController.swift
+//  MemeEditorViewController.swift
 //  Meme
 //
 //  Created by HhhotDog on 16/5/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK: Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -93,8 +93,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     //MARK: Helper
     private func generateMemedImage() -> UIImage {
         //hide toolbar and navbar
-        navBar.hidden = true
-        toolBar.hidden = true
+        configureBars(true)
         
         //UIGraphicsBeginImageContext(self.view.frame.size)
         UIGraphicsBeginImageContextWithOptions(self.view.frame.size, false, 0)
@@ -103,9 +102,13 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         UIGraphicsEndImageContext()
         
         //show navbar and toolbar
-        navBar.hidden = false
-        toolBar.hidden = false
+        configureBars(false)
         return memedImage
+    }
+    
+    private func configureBars(hidden: Bool){
+        navBar.hidden = hidden
+        toolBar.hidden = hidden
     }
     
     private func save() {
@@ -147,8 +150,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     //noticifations
     func subscribeToKeyboardNotifications(){
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     func unsubscribeFromKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
@@ -165,7 +168,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 }
 
 //MARK: TextFieldDelegate
-extension MemeViewController: UITextFieldDelegate{
+extension MemeEditorViewController: UITextFieldDelegate{
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

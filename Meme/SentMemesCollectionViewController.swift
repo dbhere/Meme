@@ -43,7 +43,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     //MARK: Actions
     func addMeme(){
-        let nextVC = self.storyboard?.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
+        let nextVC = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
         self.presentViewController(nextVC, animated: true, completion: nil)
     }
     @IBAction func backToMemeList(segue: UIStoryboardSegue){
