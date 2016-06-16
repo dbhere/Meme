@@ -130,16 +130,22 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     //compute keyboard height and change frame
+    var oldKeyboard:CGFloat = CGFloat(0)
     func keyboardWillShow(notification: NSNotification){
-        if !keyboardHasOnScreen  && bottomTextField.isFirstResponder(){
-            view.frame.origin.y -= getKeyboardHeight(notification)
-            keyboardHasOnScreen = !keyboardHasOnScreen
+        if  bottomTextField.isFirstResponder(){
+            let newKeyBoard = getKeyboardHeight(notification)
+            if keyboardHasOnScreen{
+                view.frame.origin.y += oldKeyboard
+            }
+            view.frame.origin.y -= newKeyBoard
+            oldKeyboard = newKeyBoard
+            keyboardHasOnScreen = true
         }
     }
     func keyboardWillHide(notification: NSNotification){
         if keyboardHasOnScreen && bottomTextField.isFirstResponder(){
             view.frame.origin.y += getKeyboardHeight(notification)
-            keyboardHasOnScreen = !keyboardHasOnScreen
+            keyboardHasOnScreen = false
         }
     }
     
